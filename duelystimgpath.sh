@@ -38,4 +38,4 @@ if [ -z "$outfile" ]; then
 	outfile="out.json";
 fi
 
-jq 'map(. + {imgpath: .faction | match("^[a-zA-Z]+"; "g")["string"] }) | map(. | .imgpath += "\/" + (.name | gsub("[^a-zA-Z]"; ""; "g")) + ".png" )' "$1" > "$outfile"
+jq 'map(. + {imgpath: .faction | match("^[a-zA-Z]+"; "g")["string"] }) | map(. | .imgpath += "\/" + (.name | gsub("[^a-zA-Z0-9]"; ""; "g")) + ".png" )' "$1" > "$outfile"
