@@ -50,12 +50,18 @@ Example: `./duelystimgpath.sh cards.json cards_with_path.json`
 ### Windows
 - Windows 10 Anniversary provides a functional unix-like (Ubuntu) terminal. This *should* work.
 - Install Ubuntu for Windows.
-- sudo apt-get install jq
+- Open Ubuntu terminal.
+- `sudo apt-get install jq`
 - Navigate to cards.json.
-- ./duelystimgpath [input file] [output file]
+- Copy script in folder.
+- `chmod +x duelystimgpath.sh`
+- `./duelystimgpath [input file] [output file]`
 
 ### OS X
+- Open terminal.
 - Install Homebrew (if not already installed).
-- brew install jq
+- `brew install jq`
 - Navigate to cards.json.
-- ./duelystimgpath [input file] [output file]
+- Copy script in folder.
+- `chmod +x duelystimgpath.sh`
+- `./duelystimgpath [input file] [output file]`
