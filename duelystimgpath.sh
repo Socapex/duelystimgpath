@@ -39,22 +39,3 @@ if [ -z "$outfile" ]; then
 fi
 
 jq 'map(. + {imgpath: .faction | match("^[a-zA-Z]+"; "g")["string"] }) | map(. | .imgpath += "\/" + (.name | gsub("[^a-zA-Z]"; ""; "g")) + ".png" )' "$1" > "$outfile"
-
-#nope
-#jq ".[].faction" cards.json | awk '{print $1}' | tr -cd "[[:alnum:]]\n" > factions.temp;
-#jq ".[].name" cards.json | tr -cd "[[:alnum:]]\n" | awk '{print $1 ".png"}' > names.temp;
-#paste  -d "\/" factions.temp names.temp > paths.temp;
-#
-## Backup original file.
-#cp "$1" ".$1.bak";
-#
-#i=0;
-#while read -r path; do
-#	echo "$path";
-#	jq --arg imgpath "$path" ".[$i] + {imgpath: \$imgpath}" "$1" > "test.json";
-#	((++i))
-#done < paths.temp;
-#
-#rm factions.temp;
-#rm names.temp;
-#rm paths.temp;
