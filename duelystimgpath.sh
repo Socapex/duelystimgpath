@@ -24,7 +24,7 @@
 
 shopt -s nullglob
 
-usage="`basename $0` [inputfile] [output file] -- program to add data dump image path to Duelyst json file.
+usage="`basename $0` [inputfile] [output file] -- program to add data dump image path to Duelyst json file. If no output file is specified, it will output to out.json.
 	Example: ./duelystimgpath.sh cards.json cards_clean.json
 "
 
